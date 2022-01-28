@@ -1,0 +1,42 @@
+using System;
+class Assignment1
+{
+    static void Main()
+    {
+        int[] studentAges = new int[8];
+        int youngestID = 0, oldestID=0, sameageyoung=0, sameageold=0;
+        for(int i=0; i<8; i++)
+        {
+            studentAges[i] = Convert.ToInt32(Console.ReadLine());
+            if (studentAges[i] < studentAges[youngestID])
+            {
+                youngestID = i;
+            }
+            if (studentAges[i] > studentAges[oldestID])
+            {
+                oldestID = i;
+            }
+        }
+        for(int i=0; i < 8; i++)
+        {
+            if(studentAges[i] == studentAges[youngestID])
+            {
+                sameageyoung++;
+            }
+            if(studentAges[i] == studentAges[oldestID])
+            {
+                sameageold++;
+            }
+        }
+        Console.Write("Youngest student in the group is " + studentAges[youngestID] + " years old. ");
+        if (sameageyoung > 1)
+        {
+            Console.WriteLine("There are " + sameageyoung + " students at that age in the group.");
+        }
+        Console.Write("Oldest student in the group is " + studentAges[oldestID] + " years old. ");
+        if (sameageold > 1)
+        {
+            Console.WriteLine("There are " + sameageold + " students at that age in the group.");
+        }
+    }
+}
